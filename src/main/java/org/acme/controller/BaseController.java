@@ -1,5 +1,6 @@
 package org.acme.controller;
 
+import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Produces;
@@ -21,6 +22,7 @@ public abstract class BaseController<T extends BaseEntity> {
     }
 
     @POST
+    @Consumes(MediaType.APPLICATION_JSON)
     public RestResponse<T> create(T obj){
         return RestResponse.ResponseBuilder.create(RestResponse.Status.CREATED, getObjService().create(obj)).build();
     }

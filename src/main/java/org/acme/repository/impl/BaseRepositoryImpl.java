@@ -22,6 +22,6 @@ public abstract class BaseRepositoryImpl<T extends BaseEntity> implements BaseRe
     @Override
     public T writeToXml(T obj) {
         //to do
-        return null;
+        return obj;
     }
 }
